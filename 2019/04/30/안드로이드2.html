@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Android 간단한 앱 만들기(1) | Homebodeveloper</title>
+	<meta name="description" content="버튼 생성 및 OnClickListener">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/img/icon.png" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/2019/04/30/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C2.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Homebodeveloper" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.js" integrity="sha384-y6SGsNt7yZECc4Pf86XmQhC4hG2wxL6Upkt9N1efhFxfh6wlxBH0mJiTE8XYclC1" crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/assets/img/icon.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Homebodeveloper</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					tags
+				</a>
+			</li>
+			
+			
+			
+			
+			
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header class="title-line" >
+    <h1 class="title">Android 간단한 앱 만들기(1)</h1>
+    
+    <p class="meta">
+      April 30, 2019
+      
+    </p>
+  </header>
+  <section class="post-content"><p>버튼 생성 및 OnClickListener</p>
+
+<p>필자의 어머니는 할인 및 적립에 사용되는 앱을 어려워하신다. 매번 알려드려도 까먹으시는 어머니를 위해 하나의 앱에 모아두려고 한다.</p>
+
+<p>우선 프로젝트를 생성한다.</p>
+
+<p><strong>app &gt; res &gt; layout &gt; activity_main.xml</strong><br />
+앱을 실행하면 나오는 화면의 레이아웃에 ‘할인’, ‘적립’이 쓰여진 버튼 2개를 넣기 위해 아래와 같이 코드를 작성한다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;android.support.constraint.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">tools:context=</span><span class="s">".MainActivity"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;Button</span>
+        <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"0dp"</span>
+        <span class="na">android:layout_marginTop=</span><span class="s">"8dp"</span>
+        <span class="na">android:layout_marginBottom=</span><span class="s">"0dp"</span>
+        <span class="na">android:layout_marginEnd=</span><span class="s">"8dp"</span>
+        <span class="na">android:layout_marginStart=</span><span class="s">"8dp"</span>
+        <span class="na">android:text=</span><span class="s">"@string/discount"</span>
+        <span class="na">android:textSize=</span><span class="s">"70dp"</span>
+        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintBottom_toTopOf=</span><span class="s">"@id/button2"</span>
+        <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;Button</span>
+        <span class="na">android:id=</span><span class="s">"@+id/button2"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"0dp"</span>
+        <span class="na">android:layout_marginEnd=</span><span class="s">"8dp"</span>
+        <span class="na">android:layout_marginStart=</span><span class="s">"8dp"</span>
+        <span class="na">android:layout_marginTop=</span><span class="s">"8dp"</span>
+        <span class="na">android:layout_marginBottom=</span><span class="s">"8dp"</span>
+        <span class="na">android:text=</span><span class="s">"@string/point"</span>
+        <span class="na">android:textSize=</span><span class="s">"70dp"</span>
+        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">"@id/button1"</span>
+        <span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">"parent"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/android.support.constraint.ConstraintLayout&gt;</span>
+</code></pre></div></div>
+<p>첫번째 Button의 속성을 보자</p>
+<ul>
+  <li>id를 부여하면 각 버튼(또는 다른 뷰들)을 가리킬 수 있다. button1이라는 아이디를 추가하면서 부여했다.</li>
+  <li>margin을 설정할 때, 두 버튼 사이 간격이 8dp가 되게 하기 위해서 button1의 bottom margin을 0으로 설정했다.</li>
+</ul>
+
+<p><img src="/assets/img/marginpadding.png" alt="image" /></p>
+
+<ul>
+  <li>버튼에 쓸 텍스트를 text는 아래와 같이 <strong>app &gt; res &gt; values &gt; strings.xml</strong> 에 추가한 후 설정한다.</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"discount"</span><span class="nt">&gt;</span>할 인<span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"point"</span><span class="nt">&gt;</span>적 립<span class="nt">&lt;/string&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>textSize로 텍스트의 크기를 설정한다. sp(Scale independent pixels) 단위를 사용하면 시스템 설정(글씨 가장 크게 등)에 따라 크기가 변하게 된다. dp(Density independent pixels) 단위를 사용하면 변하지 않는다.</li>
+  <li>layout_constraint~를 설정하면 설정에 맞추어 자동으로 위치가 조절된다. 여기에선 각 button의 왼쪽, 오른쪽이 “parent”의 왼쪽, 오른쪽에 연결되었으므로 가운데 정렬이 된다. button1의 위쪽은 “parent”의 위쪽, button2의 바닥은 “parent’의 바닥에 연결되었고, 각 버튼이 서로 연결되면서 세로로 같은 간격만큼 떨어지도록 정렬된다.</li>
+  <li>이때 폭을 “match_parent”, 즉 화면 크기에 맞추고, 높이를 0dp로 설정하면 아래 사진과 같이 화면에 꽉차는 버튼을 만들 수 있다.</li>
+</ul>
+
+<p><img src="/assets/img/1.png" alt="image" /></p>
+
+<p><strong>app &gt; java &gt; com.~~ &gt; MainActivity.java</strong><br />
+이제 버튼을 눌렀을 때 화면이 전환될 수 있도록 해보자.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+
+        <span class="n">Button</span> <span class="n">button1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">button1</span><span class="o">);</span>
+        <span class="n">button1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">DiscountActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span> <span class="c1">// Activity 전환</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+
+        <span class="n">Button</span> <span class="n">button2</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">button2</span><span class="o">);</span>
+        <span class="n">button2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">PointActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+        
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>onCreate 함수는 Activity가 생성될 때, 실행되는 함수이다.</li>
+  <li>layout에서 설정한 id로 버튼(view)을 찾아 사용한다.</li>
+  <li>OnClickListener는 버튼 클릭을 대기한다. 클릭할 경우, onClick 함수가 실행되는데, 이를 override해서 우리가 원하는 작업을 실행할 수 있다.</li>
+  <li>Activity 전환을 위해서 새로운 Activity를 생성한다. <strong>app &gt; java &gt; com.~~</strong> 에서 마우스 오른쪽을 클릭하여 <strong>New &gt; Activity &gt; Empty Activity</strong> 를 클릭하여 생성한다. class와 layout 파일이 생성되며, AndroidManifest.xml에 추가된다.</li>
+  <li>Intent는 Activity를 호출하기 위해 필요한 통신 장치이다. (현재 Activity, 이동할 Activity)</li>
+  <li>startActiviy(intent)를 통해 다음 Activity(코드에서는 DiscountActivity)로 전환한다.</li>
+</ul>
+</section>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#Android">#Android</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+
+  </body>
+</html>

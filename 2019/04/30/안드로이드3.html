@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Android layout preview 보이지 않음 | Homebodeveloper</title>
+	<meta name="description" content="layout preview가 보이지 않거나, 반응이 없을 때.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/img/icon.png" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/2019/04/30/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C3.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Homebodeveloper" href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.js" integrity="sha384-y6SGsNt7yZECc4Pf86XmQhC4hG2wxL6Upkt9N1efhFxfh6wlxBH0mJiTE8XYclC1" crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/assets/img/icon.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Homebodeveloper</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/tags.html">
+					tags
+				</a>
+			</li>
+			
+			
+			
+			
+			
+            
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+    
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header class="title-line" >
+    <h1 class="title">Android layout preview 보이지 않음</h1>
+    
+    <p class="meta">
+      April 30, 2019
+      
+    </p>
+  </header>
+  <section class="post-content"><p>layout preview가 보이지 않거나, 반응이 없을 때.</p>
+
+<p><strong>app &gt; res &gt; values &gt; styles.xml</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;resources&gt;</span>
+
+    <span class="c">&lt;!-- Base application theme. --&gt;</span>
+    <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"AppTheme"</span> <span class="na">parent=</span><span class="s">"Theme.AppCompat.Light.DarkActionBar"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>에 Base를 추가하면 된다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;resources&gt;</span>
+
+    <span class="c">&lt;!-- Base application theme. --&gt;</span>
+    <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"AppTheme"</span> <span class="na">parent=</span><span class="s">"Base.Theme.AppCompat.Light.DarkActionBar"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+</section>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#Android">#Android</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+
+  </body>
+</html>
