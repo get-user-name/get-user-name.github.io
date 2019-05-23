@@ -5,7 +5,49 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>Development, UX Design, Daily Life</description>
-    <pubDate>Mon, 13 May 2019 01:21:19 +0900</pubDate>
+    <pubDate>Fri, 24 May 2019 02:51:43 +0900</pubDate>
+    
+      <item>
+        <title>Adding at least one Activity with an ACTION-VIEW intent filter</title>
+        <link>/2019/05/23/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C.html</link>
+        <guid isPermaLink="true">/2019/05/23/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C.html</guid>
+        <description>&lt;p&gt;Manifest file에서 해당 경고 메세지가 나올 때&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;app &amp;gt; manifests &amp;gt; AndroidManifest.xml&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;activity&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.MainActivity&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;intent-filter&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;action&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;android.intent.action.MAIN&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;action&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;android.intent.action.VIEW&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;category&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;android.intent.category.LAUNCHER&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/intent-filter&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/activity&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드의 4번째 줄처럼 android.intent.action.VIEW를 추가한다.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 23 May 2019 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>Unity와 Mapbox를 이용한 GPS-based AR 앱</title>
+        <link>/2019/05/11/unitymapbox.html</link>
+        <guid isPermaLink="true">/2019/05/11/unitymapbox.html</guid>
+        <description>&lt;p&gt;Unity와 Mapbox를 사용하여 위치기반 AR 앱을 만들어보자.&lt;/p&gt;
+
+&lt;h1 id=&quot;1-mapbox&quot;&gt;1. Mapbox&lt;/h1&gt;
+&lt;p&gt;우선, &lt;a href=&quot;mapbox.com&quot;&gt;mapbox&lt;/a&gt; SDK를 사용하기 위해 계정을 만들고, Unity용 SDK를 다운받는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Assets &amp;gt; Import Package &amp;gt; Custom Package&lt;/strong&gt;&lt;br /&gt;
+Unity에 새 프로젝트를 만든 후, 다운받은 SDK를 import한다.&lt;br /&gt;
+Mapbox 메뉴가 생겼을 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;File &amp;gt; Build Settings&lt;/strong&gt;&lt;br /&gt;
+에서 Android로 Switch Platorm 한다.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 11 May 2019 00:00:00 +0900</pubDate>
+      </item>
     
       <item>
         <title>ARCore Sceneform</title>
