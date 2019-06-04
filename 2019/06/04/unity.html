@@ -2,8 +2,8 @@
 <html class="no-js">
   <head>
 	<meta charset="utf-8">
-	<title>Unity와 Mapbox를 이용한 GPS-based AR 앱 | Homebodeveloper</title>
-	<meta name="description" content="Unity와 Mapbox를 사용하여 위치기반 AR 앱을 만들어보자.">
+	<title>Unity에서 png 이미지 사용법 | Homebodeveloper</title>
+	<meta name="description" content="투명 배경이 있는 png 이미지를 사용해보자.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -13,7 +13,7 @@
 	<link rel="shortcut icon" href="/assets/img/icon.png" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/2019/05/11/unitymapbox.html">
+	<link rel="canonical" href="/2019/06/04/unity.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Homebodeveloper" href="/feed.xml" />
@@ -74,24 +74,21 @@
     <div class="content">
       <article class="feature-image">
   <header class="title-line" >
-    <h1 class="title">Unity와 Mapbox를 이용한 GPS-based AR 앱</h1>
+    <h1 class="title">Unity에서 png 이미지 사용법</h1>
     
     <p class="meta">
-      May 11, 2019
+      June 4, 2019
       
     </p>
   </header>
-  <section class="post-content"><p>Unity와 Mapbox를 사용하여 위치기반 AR 앱을 만들어보자.</p>
+  <section class="post-content"><p>투명 배경이 있는 png 이미지를 사용해보자.</p>
 
-<h1 id="1-mapbox">1. Mapbox</h1>
-<p>우선, <a href="mapbox.com">mapbox</a> SDK를 사용하기 위해 계정을 만들고, Unity용 SDK를 다운받는다.</p>
-
-<p><strong>Assets &gt; Import Package &gt; Custom Package</strong><br />
-Unity에 새 프로젝트를 만든 후, 다운받은 SDK를 import한다.<br />
-Mapbox 메뉴가 생겼을 것이다.</p>
-
-<p><strong>File &gt; Build Settings</strong><br />
-에서 Android로 Switch Platorm 한다.</p>
+<ul>
+  <li>png를 asset 폴더 안으로 가져온다.</li>
+  <li>Create - Material 을 생성한 후, Inspector 창에서 Albedo에 png 이미지를 넣는다.</li>
+  <li>생성한 Material의 Shader를 Sprites/Default로 설정한다.</li>
+  <li>Game Object를 생성한 후, Inspector 창에서 Meterial에 2,3에서 생성한 Material을 넣는다.</li>
+</ul>
 </section>
 </article>
 
